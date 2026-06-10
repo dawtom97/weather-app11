@@ -19,3 +19,12 @@ def save_to_excel(data):
 
     except Exception as e:
         print(e)
+
+
+def read_from_excel(filepath):
+    try:
+        df = pd.read_excel(filepath)
+        return df
+
+    except Exception as e:
+        print(e)
