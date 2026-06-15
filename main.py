@@ -3,11 +3,14 @@ from services.excel_files import save_to_excel, read_from_excel
 import time
 from config import Config
 from services.render_dashboard import render_dashboard
+from services.mysql_db import create_weather_table
+
+create_weather_table()
 
 # x = read_from_excel(Config.EXCEL_PATH)
 # z = read_from_excel("sciezka.xlsx")
 
-render_dashboard("lisbon_weather_450.csv")
+# render_dashboard("lisbon_weather_450.csv")
 
 # while True:
 #     weather = get_weather()
