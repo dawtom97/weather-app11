@@ -1,11 +1,14 @@
 import streamlit as st
 import pandas as pd
+from streamlit_autorefresh import st_autorefresh
+from services.mysql_db import get_weather_records
 
-def render_dashboard(file):
+def render_dashboard():
 
-    df = pd.read_csv(file)
+    df = get_weather_records()
 
     st.set_page_config(layout="wide", page_title="Pogoda")
+    st_autorefresh(interval=10_000, key="weather_refresh")
 
     st.title("Dashboard pogodowy")
 
